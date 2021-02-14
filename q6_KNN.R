@@ -37,6 +37,7 @@ pred_lib3 <- knn(train = x_train,test=x_test,cl=y_train, k = 3)
 pred_lib1
 pred_lib2
 pred_lib3
+
 #comparison table
 library(grid)
 library(gridExtra)

@@ -1,4 +1,4 @@
-dataset<- read.table('q4.csv',header=TRUE,sep=',')
+dataset<- read.csv('q4.csv',header=TRUE,sep=',')
 
 x_avg<-(sum(dataset$budget))/nrow(dataset)
 y_avg<-(sum(dataset$sales))/nrow(dataset)
