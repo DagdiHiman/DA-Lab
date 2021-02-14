@@ -3,14 +3,13 @@ table
 
 getPred<-function(x,k){
   distance=vector()
+  length(distance)=nrow(table)
   age<-x[1]
   loan<-x[2]
-  length(distance)=nrow(table)
   for(i in 1:nrow(table))
   {
     distance[i]=sqrt(((age-table[i,1])^2)+((loan-table[i,2])^2))
   }
-  #min(distance)
   temp_table <- table
   temp_table$dist <- distance
   temp_table <- temp_table[order(temp_table$dist),]
@@ -26,7 +25,11 @@ pred2 <- apply(x_test,1,function(x) getPred(x,2))
 pred3 <- apply(x_test,1,function(x) getPred(x,3))
 
 x_test[1]
+pred1
+pred2
+pred3
 #Library Function
+x_test <- data.frame("Age"=c(5,20,80),"Loan"=c(5,10000,300000))
 library(class)
 y_train <- table[,3]
 x_train <- table[,1:2]
