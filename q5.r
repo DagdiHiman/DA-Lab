@@ -6,8 +6,8 @@ x <- as.matrix(x)
 
 y <- as.matrix(data$totalUnits)
 
-#Find coefficients
-b <- solve(t(x)%*%x)%*%t(x)%*%y  #coefficient vector beta = inv(x'*x)*x'*y
+#Find coefficients : (t(x)*x) * t(x) * y
+b <- solve(t(x)%*%x)%*%t(x)%*%y  #coefficient vector beta = inv(x'*x)*x'*y 
 b
 
 getPred <- function(x){
